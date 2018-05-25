@@ -10,8 +10,7 @@ import { StorageService } from './storage.service';
 */
 @Injectable()
 export class RestUserProvider {
-  apiUrl = 'http://localhost:8000/api';
-  fakeUrl = 'https://jsonplaceholder.typicode.com';
+  apiUrl = 'http://138.68.133.220:8000/api';
   // localUser = {token:'', usename:''}
   constructor(public http: HttpClient, public storage: StorageService) {
     console.log('Hello RestProvider Provider');

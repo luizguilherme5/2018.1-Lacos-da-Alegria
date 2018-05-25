@@ -10,7 +10,7 @@ import { RestUserProvider } from '../../providers/rest-user';
 })
 export class ProfilePage {
 	user: any;
-    private image: string;
+    image: string;
 
 	constructor(private camera: Camera, public navCtrl: NavController, public params: NavParams, public RestProvider: RestUserProvider) {
     this.getUser(1);
