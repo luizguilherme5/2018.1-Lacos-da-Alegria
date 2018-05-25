@@ -20,6 +20,7 @@ RUN apt-get update \
     && npm install -g npm@"$NPM_VERSION" \
     && npm install -g cordova@"$CORDOVA_VERSION" ionic@"$IONIC_VERSION" \
     && npm install -g karma \
+    && npm install --save @ionic-native/camera \
     #&& gem install sass \
     #&& ionic start myApp sidemenu \
 
