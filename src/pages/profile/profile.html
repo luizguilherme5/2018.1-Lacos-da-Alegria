@@ -8,9 +8,12 @@
   <div>
     <ion-list>
         <ion-item>
-          <ion-avatar id="picture" item-start>
-            <img src="../../assets/imgs/laços.ico">
-          </ion-avatar>
+            <button ion-button icon-right (click)="onTakePicture()">
+                Take Picture <ion-icon name="camera"></ion-icon>
+            </button>
+         <!-- <ion-avatar id="picture" item-start>
+         <!--   <img src="../../assets/imgs/laços.ico">
+         <!-- </ion-avatar> -->
         </ion-item>
         <ion-item *ngFor='let user of user'>
           {{user.username}}

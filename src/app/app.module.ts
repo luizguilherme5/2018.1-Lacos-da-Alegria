@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { Camera } from '@ionic-native/camera';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
@@ -84,6 +85,7 @@ import { StorageService } from '../providers/storage.service';
     RestUserProvider,
     StorageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Camera
   ]
 })
 

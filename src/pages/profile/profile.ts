@@ -1,3 +1,4 @@
+import { Camera, CameraOptions } from '@ionic-native/camera';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
@@ -9,8 +10,9 @@ import { RestUserProvider } from '../../providers/rest-user';
 })
 export class ProfilePage {
 	user: any;
+    private image: string;
 
-	constructor(public navCtrl: NavController, public params: NavParams, public RestProvider: RestUserProvider) {
+	constructor(private camera: Camera, public navCtrl: NavController, public params: NavParams, public RestProvider: RestUserProvider) {
     this.getUser(1);
   }
 
@@ -30,11 +32,27 @@ export class ProfilePage {
 
     return data;
   }
+
   getUser(id) {
     this.RestProvider.getUser(id)
     .then(data => {
       this.user = [data];
       console.log(this.user);
     });
+  }
+
+  onTakePicture() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      saveToPhotoAlbum: true,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      this.image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+        console.log(err);
+      });
   }
 }
