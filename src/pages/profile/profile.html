@@ -7,9 +7,16 @@
 <ion-content padding>
   <div>
     <ion-list>
+
+        <img *ngIf="image"
+        [src]="domSanitizer.bypassSecurityTrustUrl(image)" />
+       
         <ion-item>
+            <button ion-button icon-right (click)="openGallery()">
+              Abrir Galeria <ion-icon name="images"></ion-icon>
+            </button>
             <button ion-button icon-right (click)="onTakePicture()">
-                Take Picture <ion-icon name="camera"></ion-icon>
+              Tirar Foto <ion-icon name="camera"></ion-icon>
             </button>
          <!-- <ion-avatar id="picture" item-start>
          <!--   <img src="../../assets/imgs/laços.ico">

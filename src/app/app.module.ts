@@ -3,6 +3,7 @@ import { Camera } from '@ionic-native/camera';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { PhotoLibrary } from '@ionic-native/photo-library';
 
 import { AboutPage } from '../pages/about/about';
 import { ActivityDetailsPage } from '../pages/activity-details/activity-details';
@@ -85,7 +86,8 @@ import { StorageService } from '../providers/storage.service';
     RestUserProvider,
     StorageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Camera
+    Camera,
+    PhotoLibrary 
   ]
 })
 
